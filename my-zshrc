@@ -13,6 +13,7 @@ fi
 # time that oh-my-zsh is loaded.
 ZSH_THEME="golan"
 ZSH_THEME="kafeitu"
+ZSH_THEME="golan"
 
 
 # Example aliases
@@ -41,10 +42,7 @@ ZSH_THEME="kafeitu"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-source $ZSH/oh-my-zsh.sh
-
 # Customize to your needs...
-
 # Host specifics
 case $HOST in
     moco.local)
@@ -74,8 +72,13 @@ case $HOST in
         ;;
     *)
         # everywhere
+        ZSH_THEME="kafeitu"
         ;;
 esac
+
+source $ZSH/oh-my-zsh.sh
+
+
 
 # General options I like
 #
