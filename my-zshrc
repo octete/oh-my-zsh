@@ -50,6 +50,7 @@ case $HOST in
         export PATH=/usr/local/sbin:$PATH:$GOROOT/bin
         export SVN_EDITOR=vim
         export TERM=xterm-256color
+        ZSH_THEME="golan"
         plugins=(git svn ruby)
         ;;
     metis.config)
