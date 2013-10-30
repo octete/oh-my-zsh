@@ -16,6 +16,7 @@ ZSH_THEME="golan"
 ZSH_THEME="golan"
 ZSH_THEME="kafeitu"
 
+DISABLE_CORRECTION=true
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
