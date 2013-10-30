@@ -1,6 +1,7 @@
 # path to your oh-my-zsh configuration.
 ZSH=$HOME/.zsh
 
+#set -x 
 # Set a variable identifying a cheroot if you are in one
 # XXX Needs to be at the top level though.
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
@@ -12,8 +13,8 @@ fi
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="golan"
-ZSH_THEME="kafeitu"
 ZSH_THEME="golan"
+ZSH_THEME="kafeitu"
 
 
 # Example aliases
@@ -44,8 +45,9 @@ ZSH_THEME="golan"
 
 # Customize to your needs...
 # Host specifics
-case $HOST in
-    moco.local)
+HOSTNAME=$(hostname -s)
+case $HOSTNAME in
+    moco)
         export GOROOT=/usr/local/go
         export PATH=/usr/local/sbin:$PATH:$GOROOT/bin
         export SVN_EDITOR=vim
@@ -53,7 +55,7 @@ case $HOST in
         ZSH_THEME="golan"
         plugins=(git svn ruby)
         ;;
-    metis.config)
+    metis)
         export SVN_EDITOR=vim
         plugins=(git svn ruby)
         export TERM=xterm-256color
