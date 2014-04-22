@@ -70,7 +70,7 @@ case $HOSTNAME in
         eval `keychain --eval --agents ssh id_rsa`
         export MANWIDTH=100
         plugins=(git svn ruby)
-        umask 077
+        #umask 077
         # Deal with the colours
         if [ "$COLORTERM" = "gnome-terminal" ] ; then
             echo "Setting 256 color"
@@ -79,6 +79,7 @@ case $HOSTNAME in
             fi
         fi
         export GOROOT=/usr/local/go
+        export GOPATH=$HOME//src/golan/gopath
         PATH="$PATH:$HOME/Downloads/SublimeText2:$GOROOT/bin"
         ;;
     *)
@@ -102,6 +103,8 @@ set nonomatch
 if [[ -e ~/.debianrc ]] ; then
     . ~/.debianrc 
 fi
+
+function gi() { curl http://www.gitignore.io/api/$@ ;}
 
 # vim:syntax=sh
 
