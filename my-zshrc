@@ -49,8 +49,12 @@ DISABLE_CORRECTION=true
 HOSTNAME=$(hostname -s)
 case $HOSTNAME in
     moco)
-        export GOROOT=/usr/local/go
-        export PATH=/usr/local/sbin:$PATH:$GOROOT/bin
+        # Go
+        #export GOROOT=/usr/local/go
+        #export GOPATH=/Users/golan/Devel/go
+        ## Other variables.
+        #export PATH=/usr/local/sbin:$PATH:$GOROOT/bin:$HOME/bin
+        export PATH=/usr/local/sbin:$PATH:$HOME/bin
         export SVN_EDITOR=vim
         export TERM=xterm-256color
         ZSH_THEME="golan"
@@ -100,3 +104,4 @@ if [[ -e ~/.debianrc ]] ; then
 fi
 
 # vim:syntax=sh
+
