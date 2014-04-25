@@ -15,6 +15,7 @@ fi
 ZSH_THEME="golan"
 ZSH_THEME="golan"
 ZSH_THEME="kafeitu"
+ZSH_THEME="gozilla"
 
 DISABLE_CORRECTION=true
 
@@ -56,13 +57,14 @@ case $HOSTNAME in
         ZSH_THEME="golan"
         plugins=(git svn ruby)
         ;;
-    metis)
-        export SVN_EDITOR=vim
-        plugins=(git svn ruby)
-        export TERM=xterm-256color
-        ;;
     pleuron)
-        ZSH_THEME="golan"
+        if [[ $UID == "0" ]] ; 
+        then
+            ZSH_THEME="frisk"
+        else
+            ZSH_THEME="golan"
+        fi
+        #ZSH_THEME="fino"
         eval `keychain --eval --agents ssh id_rsa`
         export MANWIDTH=100
         plugins=(git svn ruby)
@@ -98,6 +100,10 @@ set nonomatch
 
 if [[ -e ~/.debianrc ]] ; then
     . ~/.debianrc 
+fi
+
+if [[ -f ~/.aliases ]] ; then
+    source ~/.aliases 
 fi
 
 function gi() { curl http://www.gitignore.io/api/$@ ;}
