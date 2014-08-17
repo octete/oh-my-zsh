@@ -65,7 +65,7 @@ case $HOSTNAME in
             ZSH_THEME="golan"
         fi
         #ZSH_THEME="fino"
-        eval `keychain --eval --agents ssh id_rsa`
+        eval `keychain --eval --nogui --agents ssh,gpg id_rsa`
         export MANWIDTH=100
         plugins=(git svn ruby)
         #umask 077
@@ -76,9 +76,10 @@ case $HOSTNAME in
                 export TERM=xterm-256color
             fi
         fi
-        export GOROOT=/usr/local/go
-        export GOPATH=$HOME//src/golan/gopath
-        PATH="$PATH:$HOME/Downloads/SublimeText2:$GOROOT/bin"
+        #export GOROOT=/usr/local/go
+        export GOPATH=$HOME/src/golan/gopath
+        PATH="$PATH:$HOME/Downloads/SublimeText2:/usr/local/go/bin:$GOPATH/bin"
+        export JAVA_HOME=/usr/lib/jvm/java-6-oracle/
         ;;
     *)
         # everywhere
